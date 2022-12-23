@@ -98,9 +98,9 @@
 	% endif
 </%def>
 
-<%def name="post_thumb(post, link=True, classname='thumb')">
+<%def name="post_thumb(post, link=True, classname=u'thumb', id=None)">
 	## Render a single post in #thumbs view (or similar)
-	<span class="${ classname }" id="p${ post.md5 }">
+	<span class="${ classname }" id="p${ post.md5 if id is None else id}">
 	% if link:
 		<a href="${ base }post/${ post.md5 }">
 	% else:

@@ -5,6 +5,15 @@
 	If you had javascript, image resizing might work
 	</div></noscript>
 	<div onclick="return WP.size.toggle(false);" id="rescaled-msg" class="msgbox"></div>
+
+	% if navthumbs:
+        	<div id="scrollthumbs" class="underimg">
+                  % for ix, p in enumerate(navthumbs):
+                  	${ local.post_thumb(p, p.md5 != post.md5, u'thumb ' + 'dist1b', u'thumb' + str(ix)) }
+                  % endfor
+		</div>
+	% endif
+
 	<div id="main-image-container" style="--width: ${ initial_width }px; --height: ${ initial_height }px; --translate-horiz: ${ translate_horiz }px; --translate-vert: ${ translate_vert }px; --rotate: ${ post.rotate }deg;">
 		<img
 		id="main-image"
