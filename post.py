@@ -36,6 +36,11 @@ def r_post(m):
 		data.initial_raw_width = data.initial_width
 		data.initial_raw_height = data.initial_height
 
+	posts = client.search_post(order=u'-aaaaaa-aaaac8-faketg-bddate', range=[post.md5, -2, 2], wanted=('tagname',))
+	for x in posts:
+		x.reldata = 'dist1b'
+	data.navthumbs = posts
+
 	data.ordered_tags = [t for t in post.tags if t.ordered]
 	if data.ordered_tags:
 		do_rel = (len(data.ordered_tags) == 1)
