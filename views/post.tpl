@@ -4,7 +4,6 @@
 	<noscript><div id="no-resize" class="msgbox">
 	If you had javascript, image resizing might work
 	</div></noscript>
-	<div onclick="return WP.size.toggle(false);" id="rescaled-msg" class="msgbox"></div>
 
 	% if navthumbs:
         	<div id="scrollthumbs" class="underimg">
@@ -31,6 +30,7 @@
 			<div id="fallback-sizer" style="height: ${ initial_height }px; width: ${initial_raw_width }px;"></div>
 		</div>
 	</div>
+	<div onclick="return WP.size.toggle(false);" id="rescaled-msg" class="msgbox"></div>
 	${ local.inline_script('WP.size.toggle(true);') }
 	% if rel_posts:
 		<div id="related" class="underimg">
