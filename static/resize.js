@@ -37,6 +37,7 @@
 		wh.push(window.innerHeight);
 		ww = WP.max(ww);
 		wh = WP.max(wh);
+		wh = wh - document.getElementById("scrollthumbs").offsetHeight;
 		if (ww < 1 || wh < 1) { return false; }
 
 		if (!WP.size.state) {
